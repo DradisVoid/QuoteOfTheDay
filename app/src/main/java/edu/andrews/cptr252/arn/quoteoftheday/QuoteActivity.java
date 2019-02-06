@@ -17,28 +17,47 @@ public class QuoteActivity extends AppCompatActivity {
     /** Key for fact about author stored in Intent sent to AuthorFactActivity. */
     public static final String EXTRA_AUTHOR_FACT = "edu.andrews.cptr252.arn.quoteoftheday.author_fact";
 
+    /** Key for preserving current quote when rotating device */
     private static final String KEY_QUOTE_INDEX = "quoteIndex";
 
     /** ImageView used to display inspirational image */
     private ImageView mImageView;
 
+    /** TextView used to display a quote */
     private TextView mQuoteTextView;
+
+    /** TextView used to display a quote's author */
     private TextView mAuthorTextView;
+
+    /** Button used to navigate to the next quote */
     private Button mNextButton;
 
     /** Quotes used in app */
     private Quote[] mQuoteList = new Quote[] {
             new Quote(R.string.quote_text_0,
                     R.string.quote_author_0,
-                    R.string.author_fact_0),
+                    R.string.author_fact_0,
+                    R.drawable.image_0),
 
             new Quote(R.string.quote_text_1,
                     R.string.quote_author_1,
-                    R.string.author_fact_1),
+                    R.string.author_fact_1,
+                    R.drawable.image_1),
 
             new Quote(R.string.quote_text_2,
                     R.string.quote_author_2,
-                    R.string.author_fact_2)
+                    R.string.author_fact_2,
+                    R.drawable.image_2),
+
+            new Quote(R.string.quote_text_3,
+                    R.string.quote_author_3,
+                    R.string.author_fact_3,
+                    R.drawable.image_3),
+
+            new Quote(R.string.quote_text_4,
+                    R.string.quote_author_4,
+                    R.string.author_fact_4,
+                    R.drawable.image_4)
     };
 
     /** Index of current in list */
@@ -55,9 +74,11 @@ public class QuoteActivity extends AppCompatActivity {
     private void updateQuote() {
         int quote = mQuoteList[mCurrentIndex].getQuote();
         int author = mQuoteList[mCurrentIndex].getAuthor();
+        int image = mQuoteList[mCurrentIndex].getImage();
 
         mQuoteTextView.setText(quote);
         mAuthorTextView.setText(author);
+        mImageView.setImageResource(image);
     }
 
     /**
@@ -88,7 +109,8 @@ public class QuoteActivity extends AppCompatActivity {
 
         // Display image
         mImageView = findViewById(R.id.imageView);
-        mImageView.setImageResource(R.drawable.mountain_pic);
+        int image = mQuoteList[mCurrentIndex].getImage();
+        mImageView.setImageResource(image);
 
         // Display the text for the quote
         mQuoteTextView = findViewById(R.id.quoteTextView);

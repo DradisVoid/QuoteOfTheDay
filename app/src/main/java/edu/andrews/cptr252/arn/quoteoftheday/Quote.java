@@ -11,16 +11,21 @@ public class Quote {
     /** Reference to author's fact */
     private int mAuthorFact;
 
+    /** Reference to inspirational picture */
+    private int mImage;
+
     /**
      * Create a new quote
      * @param quote     Resource id for quote text
      * @param author    Resource id for quote author
      * @param authorFact    Resource id for fact about author
+     * @param image     Resource id for inspirational image
      */
-    public Quote(int quote, int author, int authorFact) {
+    public Quote(int quote, int author, int authorFact, int image) {
         mQuote = quote;
         mAuthor = author;
         mAuthorFact = authorFact;
+        mImage = image;
     }
 
     /** Getters and setters */
@@ -46,5 +51,13 @@ public class Quote {
 
     public void setAuthorFact(int mAuthorFact) {
         this.mAuthorFact = mAuthorFact;
+    }
+
+    public int getImage() {
+        return mImage;
+    }
+
+    public void setImage(int mImage) {
+        this.mImage = mImage;
     }
 }
