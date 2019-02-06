@@ -11,4 +11,5 @@
     <string name="author_fact_1">Helen Hayes won an Emmy, a Grammy, an Oscar, and a Tony award.</string>
     <string name="author_fact_2">P.J. O\'Rourke was born in Toledo, OH.</string>
     <string name="fact_error">Fact missing</string>
+    <string name="imageview_description">Inspirational image of mountains or kittens and such</string>
 </resources>

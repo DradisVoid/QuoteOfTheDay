@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 /**
@@ -15,7 +16,11 @@ import android.widget.TextView;
 public class QuoteActivity extends AppCompatActivity {
     /** Key for fact about author stored in Intent sent to AuthorFactActivity. */
     public static final String EXTRA_AUTHOR_FACT = "edu.andrews.cptr252.arn.quoteoftheday.author_fact";
+
     private static final String KEY_QUOTE_INDEX = "quoteIndex";
+
+    /** ImageView used to display inspirational image */
+    private ImageView mImageView;
 
     private TextView mQuoteTextView;
     private TextView mAuthorTextView;
@@ -80,6 +85,10 @@ public class QuoteActivity extends AppCompatActivity {
         if (savedInstanceState != null) {
             mCurrentIndex = savedInstanceState.getInt(KEY_QUOTE_INDEX);
         }
+
+        // Display image
+        mImageView = findViewById(R.id.imageView);
+        mImageView.setImageResource(R.drawable.mountain_pic);
 
         // Display the text for the quote
         mQuoteTextView = findViewById(R.id.quoteTextView);
