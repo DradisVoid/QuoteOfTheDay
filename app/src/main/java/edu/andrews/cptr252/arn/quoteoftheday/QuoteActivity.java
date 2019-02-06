@@ -7,7 +7,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+/**
+ * Main activity for the application
+ * Displays a series of quotes
+ */
+
 public class QuoteActivity extends AppCompatActivity {
+    /** Key for fact about author stored in Intent sent to AuthorFactActivity. */
     public static final String EXTRA_AUTHOR_FACT = "edu.andrews.cptr252.arn.quoteoftheday.author_fact";
     private static final String KEY_QUOTE_INDEX = "quoteIndex";
 
@@ -49,6 +55,10 @@ public class QuoteActivity extends AppCompatActivity {
         mAuthorTextView.setText(author);
     }
 
+    /**
+     * Remember the current quote when the activity is destroyed
+     * @param savedInstanceState Bundle used for saving identity of current quote.
+     */
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
         super.onSaveInstanceState(savedInstanceState);
@@ -57,6 +67,10 @@ public class QuoteActivity extends AppCompatActivity {
         savedInstanceState.putInt(KEY_QUOTE_INDEX, mCurrentIndex);
     }
 
+    /**
+     * Setup and inflate layout.
+     * @param savedInstanceState Previously saved Bundle
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -94,7 +108,7 @@ public class QuoteActivity extends AppCompatActivity {
         mNextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /**
+                /*
                  * move to next quote in the list
                  * if index reaches end of array,
                  * reset index to zero
