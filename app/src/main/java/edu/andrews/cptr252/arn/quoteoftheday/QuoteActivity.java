@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 public class QuoteActivity extends AppCompatActivity {
     public static final String EXTRA_AUTHOR_FACT = "edu.andrews.cptr252.arn.quoteoftheday.author_fact";
+    private static final String KEY_QUOTE_INDEX = "quoteIndex";
 
     private TextView mQuoteTextView;
     private TextView mAuthorTextView;
@@ -49,9 +50,22 @@ public class QuoteActivity extends AppCompatActivity {
     }
 
     @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        super.onSaveInstanceState(savedInstanceState);
+        // Store the index of hte current quote in the Bundle
+        // Use our key to access the value later
+        savedInstanceState.putInt(KEY_QUOTE_INDEX, mCurrentIndex);
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quote);
+
+        // Re-display the same quote we were on when activity destroyed
+        if (savedInstanceState != null) {
+            mCurrentIndex = savedInstanceState.getInt(KEY_QUOTE_INDEX);
+        }
 
         // Display the text for the quote
         mQuoteTextView = findViewById(R.id.quoteTextView);
