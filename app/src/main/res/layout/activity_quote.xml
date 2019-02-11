@@ -13,6 +13,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:text="A pithy quote will go here"
+        android:lines="3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -60,6 +61,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/image_1" />
+        app:srcCompat="@drawable/image_0" />
 
 </android.support.constraint.ConstraintLayout>
