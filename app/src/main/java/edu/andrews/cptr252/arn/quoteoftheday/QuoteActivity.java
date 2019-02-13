@@ -16,19 +16,14 @@ import android.widget.TextView;
 public class QuoteActivity extends AppCompatActivity {
     /** Key for fact about author stored in Intent sent to AuthorFactActivity. */
     public static final String EXTRA_AUTHOR_FACT = "edu.andrews.cptr252.arn.quoteoftheday.author_fact";
-
     /** Key for preserving current quote when rotating device */
     private static final String KEY_QUOTE_INDEX = "quoteIndex";
-
     /** ImageView used to display inspirational image */
     private ImageView mImageView;
-
     /** TextView used to display a quote */
     private TextView mQuoteTextView;
-
     /** TextView used to display a quote's author */
     private TextView mAuthorTextView;
-
     /** Button used to navigate to the next quote */
     private Button mNextButton;
 
