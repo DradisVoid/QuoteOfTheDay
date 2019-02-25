@@ -8,6 +8,7 @@ import android.widget.TextView;
  * Activity that displays a fact about the author of a quote.
  */
 public class AuthorFactActivity extends AppCompatActivity {
+    /** Reference to TextView for displaying an author fact */
     private TextView mAuthorFactTextView;
 
     /**
